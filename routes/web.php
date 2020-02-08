@@ -18,3 +18,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('admin')->group(function(){
+    Route::group(['middleware' => ['can:admin']], function() {
+//        Route::get('/dashboard','DashboardController@index')->name('dashboard');
+        Route::get('/dashboard','UserController@index')->name('dashboard');
+        Route::get('/permission','UserController@show')->name('permission');
+        Route::post('/permission','UserController@remove')->name('permission.remove');
+        Route::put('/permission','UserController@update')->name('permission.update');
+        Route::get('/permission/get-permission','UserController@getPermission')->name('permission.get-permission');
+    });
+
+});
+//Route::get('/list-user','UserController@index')->name('list-user');
+
+
+

@@ -1,0 +1,141 @@
+ul {
+    margin:0;
+    padding: 0;
+}
+a{
+    text-decoration: none !important;
+    color: white;
+}
+.container-fluid{
+    padding: 0 ;
+}
+.admin_header{
+    background-color: #3c8dbc;
+    min-height: 50px;
+    width: 100%;
+    position: relative;
+    color:white;
+    z-index: 1;
+}
+.logo{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    background-color: #337ab7;
+    height: 100%;
+    padding: 10px;
+    text-align:center;
+    color:white;
+}
+.logo a{
+    font-size: 20px;
+    color:white;
+}
+.admin_nav{
+    position: absolute;top:0;
+    width: calc(100% - 250px);
+    left: 250px;
+}
+.admin_nav .navbar .a{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+    text-align:center;
+    font-size: 15px
+}
+.admin_nav .navbar .b{
+    float: right;
+}
+.admin_nav ul li a:hover{
+    background-color: #337ab7 !important;
+}
+.admin_nav ul li a.admin{
+    padding: 7.5px;
+    width: 200px;
+    position: relative;
+}
+.admin_nav ul li a.admin .avatar_header{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+}
+.admin_nav ul li a.admin .name{
+    display: inline-block;
+    position: absolute;
+    top:15px;
+    left: 50px;
+    color: white;
+}
+.admin_nav ul li span{
+    color: white;
+}
+.menu_admin{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: auto;
+    background-color: #222d32;
+    z-index: 0;
+}
+/*menu*/
+.user_panel{
+
+
+}
+.sidebar{
+    margin: 50px 0;
+    color: white;
+}
+.sidebar .user_panel{
+    background-color: #222d32;
+    width: 100%;
+    height: auto;
+}
+.sidebar .user_panel{
+    width: 100%;
+    padding: 20px 10px;
+}
+.sidebar .user_panel .avatar_header{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.sidebar .user_panel .text-success{
+    margin-right: 10px;
+}
+.sidebar .user_panel .sreach{
+    text-align: center;
+    width: 100%;
+    padding: 0 15px;
+}
+.sidebar .user_panel .sreach input{
+    width: 100%;
+    background-color: #374850;
+    border-color: #374850
+}
+.sidebar-list ul{
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+}
+.sidebar-list ul li{
+    flex-basis: 45px;
+    padding: 12px 20px;
+}
+.sidebar-list ul li.active{
+    background-color: #1e282c;
+}
+.sidebar-list ul li span{
+    margin-right: 10px;
+}
+.content-wrapper{
+    width: calc( 100% - 300px );
+    float: right;
+    margin-right: 2%;
+}
