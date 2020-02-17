@@ -15,6 +15,11 @@
                     @endif
 
                     You are logged in!
+                    @can('admin')
+                            <p>ngon</p>
+                        @elsecan('employee')
+                            <p>ok</p>
+                        @endcan
                 </div>
             </div>
         </div>
