@@ -1,0 +1,93 @@
+/*responsive*/
+/*width: 1200px*/
+
+@media only screen and (max-width: 1200px) {
+	/*side-bar*/
+	#side-bar{
+		width: 6%;
+	}
+ 	#side-bar.active{
+		width: 18%;
+		transition: width 0.5s;
+	}
+
+ 	.side-bar-header .avatar-user{
+		width: 45px;
+		height: 45px;
+	}
+ 	.side-bar-header .name-user{
+ 		display: none;
+ 	}
+ 
+ 	#side-bar.active .l-name{
+		display: block;	
+	}
+	#side-bar.active .l-icon{
+		margin-right:10px;	
+	}
+	#side-bar.active .glyphicon-chevron-right{
+		display: block;
+	}
+	.side-bar-list{
+ 		padding: 7px;
+ 	}
+ 	#side-bar.active .l-1{
+ 		padding: 0 20px;
+ 		font-size: 14px;
+		justify-content:flex-start;
+	}
+ 	.l-1{
+ 		font-size: 20px;
+ 		justify-content: center;
+ 		align-items: center;
+ 		padding: 0;
+ 	}
+ 	span.l-icon{
+ 		margin:0;
+ 	}
+ 	span.l-name{
+ 		display: none;
+ 	}
+ 	.glyphicon-chevron-right{
+ 		display: none;
+ 	}
+ 	/*contain*/
+ 	#contain-main{
+ 		margin-left: 6%;
+ 	}
+ 	#contain-main.deactive{
+ 		margin-left: 18%;
+ 		transition: margin-left 0.5s;
+ 	}
+}
+
+/*width: 1100px*/
+@media only screen and (max-width: 1100px) {
+	.product{
+		order: 2;
+		flex-grow: 1;
+	}
+	.mobie-menu-sideBar{
+		order: 1;
+		flex-grow: 0;
+		padding-left: 25px;
+	}
+	#side-bar{
+		z-index: 1024;
+	}
+
+	 	/*contain*/
+ 	#contain-main.deactive{
+ 		margin-left: 6%;
+ 	}
+
+}
+/*width: 1000px*/
+@media only screen and (max-width: 1000px) {
+	#side-bar{
+		width: 0;
+	}
+	#contain-main{
+ 		margin-left: 0;
+ 	}
+}
