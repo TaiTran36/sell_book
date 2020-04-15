@@ -1,4 +1,4 @@
-@extends('admin.layouts.admin-tenplate')
+@extends('admin.layouts.admin-template')
 @section('content')
     <div class="content-wrapper">
         <section class="content-header">
