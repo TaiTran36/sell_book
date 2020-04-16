@@ -20,7 +20,22 @@
 
     @include('admin.layouts.header')
     @include('admin.layouts.sidebar')
-    @yield('content')
+    <div class="contain-main" id="contain-main">
+        <div class="contain">
+            <div class="contain-header">
+                <div class="title">
+                    <h5 class="t-1">@yield('name')</h5>
+                </div>
+                <div class="map">
+                    <span class="m-1">Dashboard /</span><span class="m-1">E-commerce /</span><span class="m-1">Product</span>
+                </div>
+            </div>
+            <div class="page-contain col-sm-12">
+                @yield('content')
+            </div>
+
+        </div>
+    </div>
 
 </body>
 </html>
