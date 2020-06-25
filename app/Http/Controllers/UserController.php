@@ -25,7 +25,7 @@ class UserController extends Controller
     public function index()
     {
         if($this->authorize('admin')){
-            return view('admin\dashboard');
+            return view('admin.dashboard');
         }
 
     }
@@ -60,7 +60,7 @@ class UserController extends Controller
     public function show()
     {
         $accounts = User::with('roles')->get();
-        return view('admin\account\index',compact('accounts'));
+        return view('admin.account.index',compact('accounts'));
     }
 
     /**
@@ -90,7 +90,7 @@ class UserController extends Controller
         $result = $this->userRepository->update_permission($request['id'],$request['acc_permission']);
 
         if($result){
-            return redirect()->intended('admin/permission')
+            return redirect()->intended('admin.permission')
                 ->with('message','Bạn thay đổi quyền thành công');
         }
     }
