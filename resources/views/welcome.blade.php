@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:image" content="{{url('/public/uploads/the-witcher-1575920201.jpg')}}">
+        <meta property="og:url" content="{{request()->url()}}">
         <meta name="Description" CONTENT="Tác giả: Không Tên, Hoạ sĩ vẽ minh hoạ: P. Picture, Danh mục: Sách, Giá: 268.000 VND, Số trang: 784 trang">
         <title>Laravel</title>
 
