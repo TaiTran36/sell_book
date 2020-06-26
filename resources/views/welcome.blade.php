@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:image" content="{{url('public/uploads/a.jpg')}}">
-        <meta itemprop="image" content="{{url('public/uploads/a.jpg')}}">
+        <meta property="og:image" content="{{url('uploads/a.jpg')}}">
+        <meta itemprop="image" content="{{url('uploads/a.jpg')}}">
         <meta property="og:url" content="{{request()->url()}}">
         <meta name="Description" CONTENT="Tác giả: Không Tên, Hoạ sĩ vẽ minh hoạ: P. Picture, Danh mục: Sách, Giá: 268.000 VND, Số trang: 784 trang">
         <title>Laravel</title>
@@ -86,7 +86,9 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-
+                <div style="">
+                   <img style="width: 300px;height: 200px;" src="{{url('uploads/a.jpg')}}" class="img-thumbnail"/>
+                </div>
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
