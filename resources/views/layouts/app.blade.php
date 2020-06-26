@@ -11,8 +11,8 @@
 
     <meta property="og:url" content="{{request()->url()}}">
 
-        <meta property="og:image" content="https://t3-book.herokuapp.com/uploads/a.jpg">
-        <meta itemprop="image" content="https://t3-book.herokuapp.com/uploads/a.jpg">
+    <meta property="og:image" content="https://t3-book.herokuapp.com/uploads/a.jpg">
+    <meta itemprop="image" content="https://t3-book.herokuapp.com/uploads/a.jpg">
 
 
     <meta name="Description " CONTENT="Tác giả: Không Tên, Hoạ sĩ vẽ minh hoạ: P. Picture, Danh mục: Sách, Giá: 268.000 VND, Số trang: 784 trang">
