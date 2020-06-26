@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:image" content="{{url('uploads/a.jpg')}}">
-        <meta itemprop="image" content="{{url('uploads/a.jpg')}}">
+        <meta property="og:image" content="http://127.0.0.1:8000/uploads/a.jpg">
+        <meta itemprop="image" content="http://127.0.0.1:8000/uploads/a.jpg">
         <meta property="og:url" content="{{request()->url()}}">
         <meta name="Description" CONTENT="Tác giả: Không Tên, Hoạ sĩ vẽ minh hoạ: P. Picture, Danh mục: Sách, Giá: 268.000 VND, Số trang: 784 trang">
         <title>Laravel</title>
