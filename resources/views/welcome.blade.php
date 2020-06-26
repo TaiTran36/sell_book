@@ -3,6 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="">
         <meta property="og:image" content="https://t3-book.herokuapp.com/uploads/a.jpg">
         <meta itemprop="image" content="https://t3-book.herokuapp.com/uploads/a.jpg">
         <meta property="og:url" content="{{request()->url()}}">
