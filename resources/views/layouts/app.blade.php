@@ -5,8 +5,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:url" content="{{request()->url()}}">
-    <meta property="og:image" content="http://127.0.0.1:8000/uploads/a.jpg">
-    <meta itemprop="image" content="http://127.0.0.1:8000/uploads/a.jpg">
+    <meta property="og:image" content="http://127.0.0.1:8000/public/uploads/a.jpg">
+    <meta itemprop="image" content="http://127.0.0.1:8000/public/uploads/a.jpg">
     <meta name="Description " CONTENT="Tác giả: Không Tên, Hoạ sĩ vẽ minh hoạ: P. Picture, Danh mục: Sách, Giá: 268.000 VND, Số trang: 784 trang">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
