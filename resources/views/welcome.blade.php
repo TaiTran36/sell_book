@@ -15,6 +15,17 @@
 
 
             <meta name="Description " CONTENT="Tác giả: Không Tên, Hoạ sĩ vẽ minh hoạ: P. Picture, Danh mục: Sách, Giá: 268.000 VND, Số trang: 784 trang">
+        @elseif(request()->segment(1) == 'login')
+            <meta property="og:type" content="website">
+            <meta property="og:description" content="">
+
+            <meta property="og:url" content="{{request()->url()}}">
+
+            <meta property="og:image" content="https://t3-book.herokuapp.com/uploads/b.jpeg">
+            <meta itemprop="image" content="https://t3-book.herokuapp.com/uploads/b.jpeg">
+
+
+            <meta name="Description " CONTENT="Tác giả: ">
         @else
             <meta property="og:type" content="website">
             <meta property="og:description" content="">
