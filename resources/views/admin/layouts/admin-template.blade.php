@@ -10,13 +10,10 @@
     <meta property="og:description" content="">
 
     <meta property="og:url" content="{{request()->url()}}">
-    @if(auth()->check())
-        <meta property="og:image" content="https://t3-book.herokuapp.com/uploads/b.jpeg">
-        <meta itemprop="image" content="https://t3-book.herokuapp.com/uploads/b.jpeg">
-    @else
-        <meta property="og:image" content="https://t3-book.herokuapp.com/uploads/a.jpg">
-        <meta itemprop="image" content="https://t3-book.herokuapp.com/uploads/a.jpg">
-    @endif
+
+    <meta property="og:image" content="https://t3-book.herokuapp.com/uploads/b.jpeg">
+    <meta itemprop="image" content="https://t3-book.herokuapp.com/uploads/b.jpeg">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans&display=swap" rel="stylesheet">
