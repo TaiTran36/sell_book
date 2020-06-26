@@ -6,8 +6,13 @@
 
         <meta property="og:type" content="website">
         <meta property="og:description" content="">
-        <meta property="og:image" content="https://t3-book.herokuapp.com/uploads/{{(request()->segment(1) == 'home')?'b.jpeg':'a.jpg'}}">
-        <meta itemprop="image" content="https://t3-book.herokuapp.com/uploads/{{(request()->segment(1) == 'home')?'b.jpeg':'a.jpg'}}">
+        @if(auth()->check())
+            <meta property="og:image" content="https://t3-book.herokuapp.com/uploads/b.jpeg">
+            <meta itemprop="image" content="https://t3-book.herokuapp.com/uploads/b.jpeg">
+        @else
+            <meta property="og:image" content="https://t3-book.herokuapp.com/uploads/a.jpg">
+            <meta itemprop="image" content="https://t3-book.herokuapp.com/uploads/a.jpg">
+        @endif
         <meta property="og:url" content="{{request()->url()}}">
         <meta name="Description" CONTENT="Tác giả: Không Tên, Hoạ sĩ vẽ minh hoạ: P. Picture, Danh mục: Sách, Giá: 268.000 VND, Số trang: 784 trang">
         <title>Laravel</title>

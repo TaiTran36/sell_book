@@ -4,15 +4,23 @@
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <meta property="og:type" content="website">
     <meta property="og:description" content="">
+
     <meta property="og:url" content="{{request()->url()}}">
-    <meta property="og:image" content="https://t3-book.herokuapp.com/uploads/{{(request()->segment(1) == 'home')?'b.jpeg':'a.jpg'}}">
-    <meta itemprop="image" content="https://t3-book.herokuapp.com/uploads/{{(request()->segment(1) == 'home')?'b.jpeg':'a.jpg'}}">
+    @if(auth()->check())
+        <meta property="og:image" content="https://t3-book.herokuapp.com/uploads/b.jpeg">
+        <meta itemprop="image" content="https://t3-book.herokuapp.com/uploads/b.jpeg">
+    @else
+        <meta property="og:image" content="https://t3-book.herokuapp.com/uploads/a.jpg">
+        <meta itemprop="image" content="https://t3-book.herokuapp.com/uploads/a.jpg">
+    @endif
+
     <meta name="Description " CONTENT="Tác giả: Không Tên, Hoạ sĩ vẽ minh hoạ: P. Picture, Danh mục: Sách, Giá: 268.000 VND, Số trang: 784 trang">
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
