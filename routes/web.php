@@ -26,6 +26,10 @@ Route::prefix('admin')->group(function(){
         Route::post('/permission','UserController@remove')->name('permission.remove');
         Route::put('/permission','UserController@update')->name('permission.update');
         Route::get('/permission/get-permission','UserController@getPermission')->name('permission.get-permission');
+
+        Route::group(['prefix' => 'e-commerce'], function (){
+            Route::get('/', 'Admin\EcommerceController@index');
+        });
     });
 
 });

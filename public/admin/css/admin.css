@@ -25,6 +25,11 @@ header{
 	flex-wrap: wrap;
 }
 
+ul{
+    padding: 0;
+    list-style-type: none;
+}
+
 .product{
 	width: 18%;
 	padding: 10px;
@@ -218,6 +223,21 @@ header{
 .l-1:hover .l-icon{
 	color: white;
 }
+
+.l-1-children{
+    display: none;
+    margin-left:8%;
+    height: auto;
+    border-left: 5px solid #4680ff;
+    padding-left: 10px;
+}
+
+.rotate-arrow{
+    transform: rotate(90deg);
+    flex-grow: 0 !important;
+    margin-left: 52%;
+}
+
 #side-bar.active .l-1{
 	padding:0;
 	align-items: center;
