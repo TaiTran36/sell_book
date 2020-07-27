@@ -38,14 +38,15 @@
                 </li>
                 <li>
                     <a class="l-1 e-commerce {{(request()->segment(2) == 'e-commerce')?'active':'' }}" href="javascript:void(0)">
-{{--                    href="{{ url('admin/e-commerce') }}--}}
                         <i class="l-icon fas fa-home"></i>
                         <span class="l-name">E-commerce</span>
                         <span class="l-icon glyphicon glyphicon-chevron-right"></span>
                     </a>
-                    <ul class="l-1-children" data-widget="treeview">
+                    <ul class="l-1-children" style="display: {{(request()->segment(2) == 'e-commerce')?'block':'' }}" data-widget="treeview">
                         <li>
-                            <a class="l-1" href="#" >Categories</a>
+                            <a class="l-1 {{(request()->segment(3) == 'categories')?'active':'' }}" href="{{ url('admin/e-commerce/categories') }}" >
+                                <span class="l-name">Categories</span>
+                            </a>
                         </li>
                         <li class="treeview">
                             <a class="l-1" href="#" >Book</a>
