@@ -38,4 +38,5 @@
     </div>
 
 </body>
+<script type="text/javascript" src="{{ asset('admin/js/tree-view.js') }}"></script>
 </html>
