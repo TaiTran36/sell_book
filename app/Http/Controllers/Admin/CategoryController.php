@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Services\CategoryService;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -12,9 +13,18 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    protected $categoryService;
+
+    public function __construct(CategoryService $categoryService)
+    {
+        $this->categoryService = $categoryService;
+    }
+
     public function index()
     {
-        return view('admin.eCommerce.categories.index');
+        $categories = $this->categoryService->getListCategories();
+        return view('admin.eCommerce.categories.index', compact('categories'));
     }
 
     /**
@@ -24,7 +34,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**

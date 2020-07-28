@@ -14,42 +14,38 @@
             <thead class="thead-light">
             <tr class="row">
                 <th class="col-name text-center" width="20%">CATEGORY</th>
-                <th class="col-category text-center" width="15%">NAME</th>
-{{--                <th class="col text-center"  width="15%"></th>--}}
-{{--                <th class="col text-center"  width="10%">PRICE</th>--}}
-                <th class="col text-center"  width="10%">QUANTITY</th>
+                <th class="col text-center"  width="35%">DESCRIPTION</th>
+                <th class="col text-center"  width="5%">QUANTITY</th>
                 <th class="col text-center"  width="5%">STATUS</th>
-                <th class="col text-center" width="20%">ACTION</th>
+                <th class="col text-center"  width="10%">SORT</th>
+                <th class="col text-center" width="25%">ACTION</th>
             </tr>
             </thead>
             <tbody>
-            <tr class="row">
-                <td class="data-item text-center">Mark</td>
-                <td class="data-item text-center">Mark</td>
-                <td class="data-item text-center">Otto</td>
-                <td class="data-item text-center">@mdo</td>
-{{--                <td class="data-item text-center">Mark</td>--}}
-{{--                <td class="data-item text-center">Otto</td>--}}
-                <td class="data-item text-center">@mdo</td>
-            </tr>
-            <tr class="row">
-                <td class="data-item text-center">Mark</td>
-                <td class="data-item text-center">Mark</td>
-                <td class="data-item text-center">Otto</td>
-                <td class="data-item text-center">@mdo</td>
-{{--                <td class="data-item text-center">Mark</td>--}}
-{{--                <td class="data-item text-center">Otto</td>--}}
-                <td class="data-item text-center">@mdo</td>
-            </tr>
-            <tr class="row">
-                <td class="data-item text-center">Mark</td>
-                <td class="data-item text-center">Mark</td>
-                <td class="data-item text-center">Otto</td>
-                <td class="data-item text-center">@mdo</td>
-{{--                <td class="data-item text-center">Mark</td>--}}
-{{--                <td class="data-item text-center">Otto</td>--}}
-                <td class="data-item text-center">@mdo</td>
-            </tr>
+
+                @foreach($categories as $cate)
+                    <tr class="row">
+                        <td class="data-item text-center">{{$cate['name']}}</td>
+                        <td class="data-item text-center">{{$cate['description']}}</td>
+                        <td class="data-item text-center">{{$cate['quantity']}}</td>
+                        <td class="data-item text-center">
+                            @if($cate['status'] == 1)
+                                <button type="button" class="btn btn-success btn-sm">Active</button>
+                            @else
+                                <button type="button" class="btn btn-danger btn-sm">Deactivate</button>
+                            @endif
+                        </td>
+                        <td class="data-item text-center"></td>
+                        <td class="data-item text-center">
+                            <button type="button" class="btn btn-outline-subCate">Subcategory</button>
+                            @if($cate['status'] == 1)
+                                <button type="button" class="btn btn-outline-danger">Delete</button>
+                            @else
+                                <button type="button" class="btn btn-outline-success">Active</button>
+                            @endif
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
