@@ -6,7 +6,7 @@
             <span class="glyphicon glyphicon-search"></span>
         </div>
         <div class="col-sm-6 add-new">
-            <button type="button" class="btn btn-success float-right">+ Product</button>
+            <button type="button" id="add_category" class="btn btn-success float-right add-category" onclick="addProduct(this.id)">+ Category</button>
         </div>
     </div>
     <div class="table-responsive-sm table-data col-sm-12">
@@ -49,5 +49,6 @@
             </tbody>
         </table>
     </div>
+    @include('admin.eCommerce.categories.add_category', compact('listSubCate'))
 @endsection
 

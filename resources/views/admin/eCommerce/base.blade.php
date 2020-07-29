@@ -10,5 +10,6 @@
 
     </div>
     <script src="{{ asset ("admin/js/account.js")}}" type="application/javascript"></script>
+    <script src="{{ asset ("admin/js/modal_popup.js")}}" type="application/javascript"></script>
 @endsection
 

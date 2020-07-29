@@ -28,8 +28,13 @@ Route::prefix('admin')->group(function(){
         Route::get('/permission/get-permission','UserController@getPermission')->name('permission.get-permission');
 
         Route::group(['prefix' => 'e-commerce'], function (){
+
             Route::group(['prefix' => 'categories'], function (){
                 Route::get('/', 'Admin\CategoryController@index');
+            });
+
+            Route::group(['prefix' => 'sub-categories'], function (){
+                Route::get('/', 'Admin\SubCategoryController@index');
             });
         });
     });

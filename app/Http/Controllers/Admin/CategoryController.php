@@ -24,7 +24,8 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = $this->categoryService->getListCategories();
-        return view('admin.eCommerce.categories.index', compact('categories'));
+        $listSubCate = $this->categoryService->getListSubCategories();
+        return view('admin.eCommerce.categories.index', compact('categories', 'listSubCate'));
     }
 
     /**
