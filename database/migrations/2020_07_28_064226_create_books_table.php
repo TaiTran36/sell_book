@@ -23,7 +23,7 @@ class CreateBooksTable extends Migration
             $table->text('img_path');
             $table->integer('vote');
             $table->integer('publish_year');
-            $table->integer('quantity');
+            $table->integer('quantity')->default(0);
             $table->integer('quantity_sold');
             $table->string('description');
             $table->tinyInteger('status')->default(0);
