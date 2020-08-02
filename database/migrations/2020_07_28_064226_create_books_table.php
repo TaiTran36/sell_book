@@ -25,7 +25,7 @@ class CreateBooksTable extends Migration
             $table->integer('publish_year');
             $table->integer('quantity')->default(0);
             $table->integer('quantity_sold');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });

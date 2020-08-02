@@ -46,7 +46,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(!isset($request->name_cate)){
+            $message = ['error' => 'Please fill out this field'];
+            return response()->json($message);
+        }
+
+        $existCate = $this->categoryService->checkExistCate($request->name_cate);
+
+        if($existCate){
+            $message = ['error' => 'Category is exist'];
+        }else{
+            $result = $this->categoryService->addCateForName($request->name_cate, $request->description, $request->list_sub);
+            $message = ['success' => 'Successfully', 'name' => $request->sub_cate];
+        }
+        return response()->json($message);
     }
 
     /**

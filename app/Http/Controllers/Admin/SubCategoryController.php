@@ -49,13 +49,14 @@ class SubCategoryController extends Controller
     }
 
     public function createWithName(Request $request){
-//        $listSubCate = $this->subCategoryService->getListSubCate();
         $existNameSub = $this->subCategoryService->checkNameSubCate($request->sub_cate);
         if($existNameSub){
-            return response();
+            $message = ['error' => 'SubCategory is exist'];
         }else{
-
+            $result = $this->subCategoryService->addSubCateForName($request->sub_cate);
+            $message = ['success' => 'Successfully', 'name' => $request->sub_cate, 'id' => $result->id];
         }
+        return response()->json($message);
     }
 
     /**

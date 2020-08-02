@@ -10,4 +10,8 @@ class Category extends Model
         'name', 'description', 'status', 'quantity'
     ];
 
+    public function subcategories(){
+        return $this->belongsToMany('App\Models\Subcategory');
+    }
+
 }

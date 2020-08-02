@@ -25,4 +25,8 @@ class SubcategoryService
         return false;
     }
 
+    public function addSubCateForName($sub_cate){
+        return Subcategory::create(['name'=>$sub_cate]);
+    }
+
 }
