@@ -14,7 +14,7 @@ $('.add_sub_with_cate').click(function (e) {
 
     }).done(function (data) {
         if(data.success){
-            $('#list_sub').prepend('<div class="item-drag item-sub ui-sortable-handle" data-content="'+ data.id +'">'+ data.name +'</div>');
+            $('.list_sub').prepend('<div class="item-drag item-sub ui-sortable-handle" data-content="'+ data.id +'">'+ data.name +'</div>');
             $('#name_sub').val('');
         }
 
