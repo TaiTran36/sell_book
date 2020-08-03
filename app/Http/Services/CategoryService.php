@@ -37,7 +37,7 @@ class CategoryService {
         try{
             $result = Category::create(['name' => $name_cate, 'description' => $description]);
             $convertToInt = $this->convertArrayTypeToInt(json_decode($listId, true));
-            $c = $result->subcategories()->attach(json_decode($listId, true));
+            $addSubs = $result->subcategories()->attach(json_decode($listId, true));
             DB::commit();
 
         }catch(Exception $e){
@@ -51,6 +51,21 @@ class CategoryService {
             $a = (int)$a;
         }
         return $array;
+    }
+
+    public function getCategory($id){
+
+        $category = Category::where('id', $id)->with('subcategories')->first()->toArray();
+
+        return $category;
+    }
+
+    public function removeCate($id){
+        return Category::where('id', $id)->update(['status' => 0]);
+    }
+
+    public function activeCate($id){
+        return Category::where('id', $id)->update(['status' => 1]);
     }
 
 

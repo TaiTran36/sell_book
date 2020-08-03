@@ -73,6 +73,17 @@ class CategoryController extends Controller
         //
     }
 
+    public function getCategory(Request $request){
+
+        if(isset($request->cate_id)){
+            $category = $this->categoryService->getCategory($request->cate_id);
+            $message = ['success' => 'Successfully', 'category' => $category];
+        }
+
+        return response()->json($message);
+
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -106,4 +117,31 @@ class CategoryController extends Controller
     {
         //
     }
+
+    public function remove(Request $request){
+
+        if(isset($request->cate_id)){
+            $result = $this->categoryService->removeCate($request->cate_id);
+
+            if($result){
+                $message = ['success' => 'Successfully'];
+            }
+
+            return response()->json($message);
+        }
+    }
+
+    public function activeCategory(Request $request){
+
+        if(isset($request->cate_id)){
+            $result = $this->categoryService->activeCate($request->cate_id);
+
+            if($result){
+                $message = ['success' => 'Successfully'];
+            }
+
+            return response()->json($message);
+        }
+    }
+
 }

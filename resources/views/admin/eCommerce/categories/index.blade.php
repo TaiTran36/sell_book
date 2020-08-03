@@ -6,7 +6,7 @@
             <span class="glyphicon glyphicon-search"></span>
         </div>
         <div class="col-sm-6 add-new">
-            <button type="button" id="add_category" class="btn btn-success float-right add-category" onclick="addProduct(this.id)">+ Category</button>
+            <button type="button" id="add_category" class="btn btn-success float-right add-category" onclick="displayPopup(this.id, is_edit = 0)">+ Category</button>
         </div>
     </div>
     <div class="table-responsive-sm table-data col-sm-12">
@@ -30,16 +30,16 @@
                         <td class="data-item text-center">{{$cate['quantity']}}</td>
                         <td class="data-item text-center">
                             @if($cate['status'] == 1)
-                                <button type="button" class="btn btn-success btn-sm">Active</button>
+                                <button type="button" class="btn btn-success btn-sm btn-status">Active</button>
                             @else
-                                <button type="button" class="btn btn-danger btn-sm">Deactivate</button>
+                                <button type="button" class="btn btn-danger btn-sm btn-status" onclick="activate({{$cate['id']}})">Deactivate</button>
                             @endif
                         </td>
                         <td class="data-item text-center"></td>
                         <td class="data-item text-center">
-                            <button type="button" class="btn btn-outline-subCate">Subcategory</button>
+                            <button type="button" class="btn btn-outline-subCate" id="edit_category" onclick="displayPopup( this.id, is_edit = 1, {{$cate['id']}} )">Edit</button>
                             @if($cate['status'] == 1)
-                                <button type="button" class="btn btn-outline-danger">Delete</button>
+                                <button type="button" class="btn btn-outline-danger btn-delete-cate" data-content="{{$cate['id']}}">Delete</button>
                             @else
                                 <button type="button" class="btn btn-outline-success">Active</button>
                             @endif
@@ -49,6 +49,6 @@
             </tbody>
         </table>
     </div>
-    @include('admin.eCommerce.categories.add_category', compact('listSubCate'))
+    @include('admin.eCommerce.categories.action_category', compact('listSubCate'))
 @endsection
 
