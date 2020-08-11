@@ -1,6 +1,9 @@
-$('.add_sub_with_cate').click(function (e) {
+$('.add_sub_cate').click(function (e) {
     e.preventDefault();
-    let name_sub_cate = $('#name_sub').val();
+    let name_sub_cate = $('.name_subcategory').val();
+
+    let description = $('#modal_subcategory .sub_cate_description').val();
+
     $('.error-add-sub').text('');
     $.ajaxSetup({
         headers: {
@@ -8,18 +11,25 @@ $('.add_sub_with_cate').click(function (e) {
         }
     });
     jQuery.ajax({
-        url: '../e-commerce/sub-categories/create-subcategory',
+        url: '../e-commerce/subcategories/create-subcategory',
         type: 'POST',
-        data: {sub_cate: name_sub_cate},
+        data: {
+            sub_cate: name_sub_cate,
+            description: description,
+            is_form_subcate: $('.is_form_subcate').val();
+        },
 
     }).done(function (data) {
         if(data.success){
+            if(data.is_form_sub == 1){
+                window.location.reload();
+            }
+
             $('.list_sub').prepend('<div class="item-drag item-sub ui-sortable-handle" data-content="'+ data.id +'">'+ data.name +'</div>');
-            $('#name_sub').val('');
         }
 
         if(data.error){
-            $('.error-add-sub').text(data.error);
+            $('.error-name-subcate').text(data.error);
         }
 
 
