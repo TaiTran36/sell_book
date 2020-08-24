@@ -41,6 +41,10 @@ Route::prefix('admin')->group(function(){
                 Route::get('/', 'Admin\SubCategoryController@index');
                 Route::post('/create-subcategory', 'Admin\SubCategoryController@createWithName');
             });
+            Route::group(['prefix' => 'books'], function (){
+                Route::get('/', 'Admin\BookController@index');
+//                Route::post('/create-subcategory', 'Admin\SubCategoryController@createWithName');
+            });
         });
     });
 

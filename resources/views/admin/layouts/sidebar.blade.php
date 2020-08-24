@@ -49,12 +49,14 @@
                             </a>
                         </li>
                         <li>
-                            <a class="l-1 {{(request()->segment(3) == 'subcategories')?'active':'' }}" href="{{ url('admin/e-commerce/subcategories') }}" >
+                            <a class="l-1 {{(request()->segment(3) == 'subcategories')?'active':'' }}" href="" >
                                 <span class="l-name">Subcategories</span>
                             </a>
                         </li>
-                        <li class="l-1 {{(request()->segment(3) == 'book')?'active':'' }}" href="{{ url('admin/e-commerce/book') }}">
-                            <a class="l-1" href="#" >Book</a>
+                        <li>
+                            <a class="l-1 {{(request()->segment(3) == 'book')?'active':'' }}" href="{{ url('admin/e-commerce/books') }}" >
+                                <span class="l-name">Book</span>
+                            </a>
                         </li>
                     </ul>
                 </li>
