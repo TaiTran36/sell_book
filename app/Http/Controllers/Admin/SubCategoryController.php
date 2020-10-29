@@ -50,6 +50,12 @@ class SubCategoryController extends Controller
     }
 
     public function createWithName(Request $request){
+
+        if(!isset($request->sub_cate)){
+            $message = ['error' => 'Please fill out this field'];
+            return response()->json($message);
+        }
+
         $existNameSub = $this->subCategoryService->checkNameSubCate($request->sub_cate);
         if($existNameSub){
             $message = ['error' => 'SubCategory is exist'];

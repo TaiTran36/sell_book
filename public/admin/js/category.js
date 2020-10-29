@@ -1,6 +1,6 @@
 $('.btn-cate').click(function (e) {
     e.preventDefault();
-
+    $('.errors').text('');
     let url = '';
 
     let type = '';
