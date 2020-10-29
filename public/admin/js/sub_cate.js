@@ -1,5 +1,6 @@
 $('.add_sub_with_cate').click(function (e) {
     e.preventDefault();
+    $('errors').text('');
     let name_sub_cate = $('#name_sub').val();
     $('.error-add-sub').text('');
     $.ajaxSetup({

@@ -1,5 +1,5 @@
 function displayPopup(id, is_edit, cate_id = null ) {
-
+    $('.errors').text('');
     let title_modal = 'Add New Category';
 
     id = id.split('_');
