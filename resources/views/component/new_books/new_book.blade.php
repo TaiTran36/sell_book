@@ -1,3 +1,4 @@
+<p>Result: {{$a}} </p>
 <section class="new-books">
     <div class="container">
         <div class="block-new-books">

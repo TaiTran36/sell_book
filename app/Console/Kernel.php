@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use App\Console\Command\RunCronJob5Minute;
+use App\Console\Command\RunCronJobMinute;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,7 +15,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        RunCronJob5Minute::class,
+        RunCronJobMinute::class
     ];
 
     /**
@@ -24,8 +27,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+        $schedule->command('send:five_minute')->everyFiveMinutes();
+
+        $schedule->command('send:minute')->everyMinute();
+        $schedule->command('send:minute')->withoutOverlapping();
     }
 
     /**
