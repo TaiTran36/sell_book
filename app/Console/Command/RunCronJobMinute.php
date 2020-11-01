@@ -3,8 +3,7 @@
 
 namespace App\Console\Command;
 
-
-use Psy\Command\Command;
+use Illuminate\Console\Command;
 
 class RunCronJobMinute extends Command
 {

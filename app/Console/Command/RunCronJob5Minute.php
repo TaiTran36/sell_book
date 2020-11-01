@@ -3,12 +3,7 @@
 
 namespace App\Console\Command;
 
-
-use App\Consts;
-use App\Helpers\Helper;
-use App\Jobs\MailEndOfReservation;
-use App\Models\Plan;
-use Psy\Command\Command;
+use Illuminate\Console\Command;
 
 class RunCronJob5Minute extends Command
 {
