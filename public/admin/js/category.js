@@ -5,7 +5,7 @@ $('.btn-cate').click(function (e) {
 
     let type = '';
 
-    let name_cate = $('#name_category').val();
+    let name_cate = $('.name_category').val();
 
     let arr_id_sub = [];
     $('#add_sub .item-sub').each(function () {
@@ -20,7 +20,7 @@ $('.btn-cate').click(function (e) {
     }
 
     if($('.is_edit').val() == 1){
-        url = '../e-commerce/categories/get-category';
+        url = '../e-commerce/categories/update-category';
         type = 'GET';
     }
 
