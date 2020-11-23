@@ -44,6 +44,7 @@ function getCategory(cate_id) {
 
         }).done(function (data) {
             if(data.success){
+                console.log(data)
                 fill_data_cate(data.category);
             }
 
@@ -54,13 +55,13 @@ function getCategory(cate_id) {
     }
 }
 function fill_data_cate(data) {
-
     $('.name_category').val(data['name']);
     $('.cate_description').val(data['description']);
 
     if(data['subcategories'].length > 0){
 
         for (let i = 0; i < data['subcategories'].length; i++){
+            alert(data['subcategories'].length);
             $('.add_sub').append('<div class="item-drag item-sub" data-content="'+ data['subcategories'][i].id +'">'+ data['subcategories'][i].name +'</div>');
             disableDragElement(data['subcategories'][i].id);
         }

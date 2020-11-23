@@ -34,6 +34,7 @@ Route::prefix('admin')->group(function(){
                 Route::post('/create-category', 'Admin\CategoryController@store');
                 Route::delete('/delete-category', 'Admin\CategoryController@remove');
                 Route::get('/get-category', 'Admin\CategoryController@getCategory');
+                Route::put('/update-category', 'Admin\CategoryController@updateCategory');
                 Route::put('/active-category', 'Admin\CategoryController@activeCategory');
             });
 
