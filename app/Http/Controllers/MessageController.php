@@ -26,7 +26,7 @@ class MessageController extends Controller
 //        dd($request->all());
         $bot = new LINEBot($httpClient, ['channelSecret' => 'f015e13fb2c05a44b1a93d0020b9a0cc']);
 //        $result = json_encode($bot->getNumberOfFollowers( new \DateTime('2020-12-03')));
-        $result = json_encode($bot->pushMessage('U6900103bc9d0d143b258bcd188a6dc54', new TextMessageBuilder(hi)));
+        $result = json_encode($bot->pushMessage('U6900103bc9d0d143b258bcd188a6dc54', new TextMessageBuilder('hi')));
         $a = json_encode($httpClient);
         $b = json_encode($bot);
         return view('message', compact('a', 'b', 'result'));
