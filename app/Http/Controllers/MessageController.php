@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use LINE\LINEBot;
+use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 
 class MessageController extends Controller
 {
@@ -19,6 +21,9 @@ class MessageController extends Controller
     public function message(Request $request)
     {
         dd($request->all());
+        $httpClient = new CurlHTTPClient('<channel access token>');
+        $bot = new LINEBot($httpClient, ['channelSecret' => '<channel secret>']);
+
     }
 
     /**
