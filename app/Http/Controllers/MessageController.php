@@ -79,7 +79,7 @@ class MessageController extends Controller
         $bot = new LINEBot($httpClient, ['channelSecret' => 'f015e13fb2c05a44b1a93d0020b9a0cc']);
 
         if($type =='message'){
-            $result = $bot->replyMessage($replyToken, new TextMessageBuilder('halo'));
+            $result = $bot->replyMessage($replyToken, new TextMessageBuilder('Test reply message'));
         }
     }
 
