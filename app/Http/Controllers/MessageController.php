@@ -41,9 +41,9 @@ class MessageController extends Controller
         $json_bot = json_encode($bot);
         $json_result = json_encode($result);
 
-        $httpStatus = json_encode($result->getHTTPStatus());
-        $rawBody = json_encode($result->getRawBody());
-        return view('message', compact('json_httpClient', 'json_bot', 'json_result', 'httpStatus', 'rawBody', 'endPoint'));
+//        $httpStatus = json_encode($result->getHTTPStatus());
+//        $rawBody = json_encode($result->getRawBody());
+        return view('message', compact('json_httpClient', 'json_bot', 'json_result', 'endPoint'));
     }
 
     /**
