@@ -33,11 +33,11 @@ class MessageController extends Controller
 //        dd($request->all());
         $bot = new LINEBot($httpClient, ['channelSecret' => 'f015e13fb2c05a44b1a93d0020b9a0cc']);
 
-        $events = $bot['events'];
+        $events = $bot->events;
 
-        $type = $events['follows'];
-        $replyToken =  $events['replyToken'];
-        $source = $events['source'];
+        $type = $events->follow;
+        $replyToken =  $events->replyToken;
+        $source = $events->source;
 
         $data = json_encode( [
             'type'=> $type,
