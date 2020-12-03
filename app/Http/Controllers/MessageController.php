@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
@@ -83,6 +84,9 @@ class MessageController extends Controller
         }
         elseif ($type == 'follow'){
             $result = $bot->pushMessage($source['userId'], new TextMessageBuilder('Your User Id: ' . $source['userId']));
+        }
+        elseif ($type == 'memberJoined'){
+            $result = $bot->pushMessage($source['userId'], new TextMessageBuilder('Your User Id: ' . $source['userId']) . 'joined');
         }
     }
 
