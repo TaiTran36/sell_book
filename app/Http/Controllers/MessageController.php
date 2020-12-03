@@ -33,7 +33,19 @@ class MessageController extends Controller
 //        dd($request->all());
         $bot = new LINEBot($httpClient, ['channelSecret' => 'f015e13fb2c05a44b1a93d0020b9a0cc']);
 
-        $endPoint = json_encode($bot->getWebhookEndpointInfo());
+        $events = $bot['events'];
+
+        $type = $events['follows'];
+        $replyToken =  $events['replyToken'];
+        $source = $events['source'];
+
+        $data = json_encode( [
+            'type'=> $type,
+            'replyToken' => $replyToken,
+            'source' => $source
+        ]);
+
+//        $endPoint = json_encode($bot);
 //        $result = json_encode($bot->getNumberOfFollowers( new \DateTime('2020-12-03')));
 //        $result = $bot->pushMessage('U6900103bc9d0d143b258bcd188a6dc54', new TextMessageBuilder('hi'));
 
@@ -43,7 +55,7 @@ class MessageController extends Controller
 
 //        $httpStatus = json_encode($result->getHTTPStatus());
 //        $rawBody = json_encode($result->getRawBody());
-        return view('message', compact('json_httpClient', 'json_bot', 'json_result', 'endPoint'));
+        return view('message', compact('json_httpClient', 'json_bot', 'json_result', 'endPoint', 'data'));
     }
 
     /**
