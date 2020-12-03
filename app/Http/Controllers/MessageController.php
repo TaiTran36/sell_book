@@ -41,9 +41,9 @@ class MessageController extends Controller
         $source = $jsonData['events'][0]['source'];
 
         $data = json_encode( [
-            'type'=> $type,
-            'replyToken' => $replyToken,
-            'source' => $source
+            'type'=> isset($type) ? '' : $type,
+            'replyToken' => isset($replyToken) ? '' : $replyToken,
+            'source' => isset($source) ? '' : $request
         ]);
 
 //        $endPoint = json_encode($bot);
