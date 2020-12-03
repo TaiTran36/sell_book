@@ -16,12 +16,6 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    public function message(Request $request)
-    {
-
         $json_httpClient = null;
         $json_bot = null;
         $result = null;
@@ -32,19 +26,6 @@ class MessageController extends Controller
         $httpClient = new CurlHTTPClient('mS6j1v3CXNMiFicZSRsBVV131caWlAcr6x6wX78lezNKXyEHcoWbmcUjZsjfotQINGeVVIjX9l2AXtFwZTGpe1AeRcdT0+3IiSFdRdFfke6W419xaM8Z8Mb7rC38OI3w9qap+cLSoWJpHof38JOhtAdB04t89/1O/w1cDnyilFU=');
 //        dd($request->all());
         $bot = new LINEBot($httpClient, ['channelSecret' => 'f015e13fb2c05a44b1a93d0020b9a0cc']);
-
-        $LINEData = file_get_contents('php://input');
-        $jsonData = json_decode($LINEData,true);
-
-        $replyToken = $jsonData['events'][0]['replyToken'];
-        $type = $jsonData['events'][0]['type'];
-        $source = $jsonData['events'][0]['source'];
-
-        $data = json_encode( [
-            'type'=> isset($type) ? '' : $type,
-            'replyToken' => isset($replyToken) ? '' : $replyToken,
-            'source' => isset($source) ? '' : $request
-        ]);
 
 //        $endPoint = json_encode($bot);
 //        $result = json_encode($bot->getNumberOfFollowers( new \DateTime('2020-12-03')));
@@ -57,6 +38,16 @@ class MessageController extends Controller
 //        $httpStatus = json_encode($result->getHTTPStatus());
 //        $rawBody = json_encode($result->getRawBody());
         return view('message', compact('json_httpClient', 'json_bot', 'json_result', 'endPoint', 'data'));
+    }
+
+    public function message()
+    {
+
+
+    }
+
+    public function sendMessage(Request $request){
+
     }
 
     /**
@@ -77,7 +68,19 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $LINEData = file_get_contents('php://input');
+        $jsonData = json_decode($LINEData,true);
+
+        $replyToken = $jsonData['events'][0]['replyToken'];
+        $type = $jsonData['events'][0]['type'];
+        $source = $jsonData['events'][0]['source'];
+
+        $httpClient = new CurlHTTPClient('mS6j1v3CXNMiFicZSRsBVV131caWlAcr6x6wX78lezNKXyEHcoWbmcUjZsjfotQINGeVVIjX9l2AXtFwZTGpe1AeRcdT0+3IiSFdRdFfke6W419xaM8Z8Mb7rC38OI3w9qap+cLSoWJpHof38JOhtAdB04t89/1O/w1cDnyilFU=');
+        $bot = new LINEBot($httpClient, ['channelSecret' => 'f015e13fb2c05a44b1a93d0020b9a0cc']);
+
+        if($type =='follow'){
+            $result = $bot->pushMessage($source['userId'], new TextMessageBuilder('halo'));
+        }
     }
 
     /**
