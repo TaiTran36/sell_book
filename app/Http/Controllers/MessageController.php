@@ -81,9 +81,9 @@ class MessageController extends Controller
         if($type =='message'){
             $result = $bot->replyMessage($replyToken, new TextMessageBuilder('Test reply message'));
         }
-//        elseif ($type == 'follow'){
-//            $result = $bot->pushMessage($source['userId'], new TextMessageBuilder('abc'));
-//        }
+        elseif ($type == 'follow'){
+            $result = $bot->pushMessage($source['userId'], new TextMessageBuilder('abc'));
+        }
     }
 
     /**
