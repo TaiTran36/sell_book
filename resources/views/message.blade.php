@@ -3,3 +3,4 @@
 <p>Result: {{$json_result}}</p>
 <p>Http status: {{$httpStatus}}</p>
 <p>Body: {{$rawBody}}</p>
+<p>End point : {{$endPoint}}</p>
