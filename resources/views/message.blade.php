@@ -4,4 +4,4 @@
 <p>Http status: {{empty($httpStatus) ? '' : $httpStatus}}</p>
 <p>Body: {{empty($rawBody) ? '' : $rawBody}}</p>
 <p>End point : {{empty($endPoint) ? '' : $endPoint}}</p>
-<p>Data: {{$data}}</p>
+<p>Data: {{empty($data) ? '' : $data}}</p>

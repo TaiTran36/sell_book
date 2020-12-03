@@ -37,7 +37,7 @@ class MessageController extends Controller
 
 //        $httpStatus = json_encode($result->getHTTPStatus());
 //        $rawBody = json_encode($result->getRawBody());
-        return view('message', compact('json_httpClient', 'json_bot', 'json_result', 'data'));
+        return view('message', compact('json_httpClient', 'json_bot', 'json_result'));
     }
 
     public function message()
