@@ -3,6 +3,7 @@ function displayPopup(id, is_edit, cate_id = null ) {
     let title_modal = 'Add New ' + capitalizeFirstLetter(id[1]);
     $('.errors').text('');
 
+    id = id.split('_');
     var modal = document.getElementById('modal_' + id[1]);
 
     $('#modal_'+ id[1] + ' .is_edit').val(is_edit);
