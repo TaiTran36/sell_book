@@ -2,7 +2,6 @@ function displayPopup(id, is_edit, cate_id = null ) {
     $('.errors').text('');
     let title_modal = 'Add New Category';
 
-    id = id.split('_');
     var modal = document.getElementById('modal_' + id[1]);
 
     $('#modal_'+ id[1] + ' .is_edit').val(is_edit);
@@ -10,7 +9,7 @@ function displayPopup(id, is_edit, cate_id = null ) {
     refreshData();
 
     if(is_edit == 1){
-        title_modal = 'Edit Category';
+        title_modal = 'Edit ' + capitalizeFirstLetter(id[1]);
         getCategory(cate_id);
     }
 
@@ -93,6 +92,10 @@ function refreshData() {
         }
     })
 
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 

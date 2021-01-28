@@ -23,7 +23,8 @@ class SubCategoryController extends Controller
 
     public function index()
     {
-        //
+        $subcategories = $this->subCategoryService->getListSubs();
+        return view('admin.eCommerce.subcategory.index', compact('subcategories'));
     }
 
     /**
@@ -59,8 +60,9 @@ class SubCategoryController extends Controller
         if($existNameSub){
             $message = ['error' => 'SubCategory is exist'];
         }else{
-            $result = $this->subCategoryService->addSubCateForName($request->sub_cate);
-            $message = ['success' => 'Successfully', 'name' => $request->sub_cate, 'id' => $result->id];
+            $is_form_sub = isset($request->is_form_subcate)?( $request->is_form_subcate):0;
+            $result = $this->subCategoryService->addSubCateForName($request->sub_cate, $request->description);
+            $message = ['success' => 'Successfully', 'name' => $request->sub_cate, 'id' => $result->id, 'is_form_sub' => $is_form_sub];
         }
         return response()->json($message);
     }
