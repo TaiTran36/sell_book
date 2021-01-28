@@ -416,6 +416,12 @@ ul{
     margin-right: 10px;
 }
 
+/*subcategory*/
+
+#modal_subcategory .modal-content{
+    width: 50%;
+}
+
 /*errors*/
 .errors{
     color: red;

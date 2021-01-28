@@ -38,7 +38,8 @@ Route::prefix('admin')->group(function(){
                 Route::put('/active-category', 'Admin\CategoryController@activeCategory');
             });
 
-            Route::group(['prefix' => 'sub-categories'], function (){
+            Route::group(['prefix' => 'subcategories'], function (){
+                Route::get('/', 'Admin\SubCategoryController@index');
                 Route::post('/create-subcategory', 'Admin\SubCategoryController@createWithName');
             });
         });

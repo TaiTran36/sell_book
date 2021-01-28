@@ -25,8 +25,13 @@ class SubcategoryService
         return false;
     }
 
-    public function addSubCateForName($sub_cate){
-        return Subcategory::create(['name'=>$sub_cate]);
+    public function addSubCateForName($sub_cate, $des){
+        return Subcategory::create(['name'=>$sub_cate, 'description' => $des]);
+    }
+
+
+    public function getListSubs(){
+        return Subcategory::all()->sortByDesc('quantity')->sortByDesc('status')->toArray();
     }
 
 }
