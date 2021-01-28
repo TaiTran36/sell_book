@@ -14,7 +14,7 @@ $('.add_sub_cate').click(function (e) {
         data: {
             sub_cate: name_sub_cate,
             description: description,
-            is_form_subcate: $('.is_form_subcate').val();
+            is_form_subcate: $('.is_form_subcate').val(),
         },
 
     }).done(function (data) {
