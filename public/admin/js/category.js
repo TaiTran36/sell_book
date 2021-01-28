@@ -8,7 +8,7 @@ $('.btn-cate').click(function (e) {
     let name_cate = $('.name_category').val();
 
     let arr_id_sub = [];
-    $('#add_sub .item-sub').each(function () {
+    $('.add_sub .item-sub').each(function () {
         arr_id_sub.push($(this).data('content'));
     })
 
@@ -21,7 +21,7 @@ $('.btn-cate').click(function (e) {
 
     if($('.is_edit').val() == 1){
         url = '../e-commerce/categories/update-category';
-        type = 'GET';
+        type = 'PUT';
     }
 
     $.ajaxSetup({
@@ -35,7 +35,8 @@ $('.btn-cate').click(function (e) {
         data: {
             name_cate: name_cate,
             description : des,
-            list_sub: JSON.stringify(arr_id_sub)
+            list_sub: JSON.stringify(arr_id_sub),
+            _method: 'POST'
         },
 
     }).done(function (data) {

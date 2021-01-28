@@ -40,8 +40,8 @@
                         <div class="col-sm-7">
                             <label for="name_sub">Add Subcategory</label>
                             <div class="form-group block_add_sub">
-                                <input type="text" class="form-control"  class="name_subcategory" placeholder="Name subcategory" style="margin-right: 10px">
-                                <button type="button" class="btn btn-primary mb-2 add_sub_cate">Add</button>
+                                <input type="text" class="form-control name_subcategory" placeholder="Name subcategory" style="margin-right: 10px">
+                                <button type="button" class="btn btn-primary mb-2 add_sub_cate name_sub">Add</button>
                             </div>
                             <div class="errors error-name-subcate"></div>
                         </div>
