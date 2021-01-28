@@ -140,7 +140,7 @@ class CategoryController extends Controller
     public function activeCategory(Request $request){
 
         if(isset($request->cate_id)){
-            $result = $this->categoryService->activeCate($request->cate_id);
+            $result = $this->categoryService->activeCate($request->cate_id, $request->status);
 
             if($result){
                 $message = ['success' => 'Successfully'];

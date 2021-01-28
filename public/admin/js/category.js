@@ -84,24 +84,32 @@ $('.btn-delete-cate').click(function () {
     }
 })
 
-function activate(cate_id) {
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    jQuery.ajax({
-        url: '../e-commerce/categories/active-category',
-        type: 'POST',
-        data: {
-            _method: 'PUT',
-            cate_id: cate_id,
-        },
 
-    }).done(function (data) {
-        if(data.success){
-            $('.btn-status').removeClass()
-        }
-    }).fail(function (xhr, Status, error) {
-    });
-}
+$('.btn-status').each(function () {
+    $(this).click(function () {
+        let cate_id = $(this).data('id');
+        let btnStatus = $(this);
+        let status = $(this).data('status');
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        jQuery.ajax({
+            url: '../e-commerce/categories/active-category',
+            type: 'POST',
+            data: {
+                _method: 'PUT',
+                cate_id: cate_id,
+                status: status
+            },
+
+        }).done(function (data) {
+            if(data.success){
+                btnStatus.data("status", status ? 0 : 1);
+                btnStatus.removeClass(status ? "btn-success" : "btn-danger").addClass(status ? "btn-danger" : " btn-success").text(status ? "Deactivate" : "Active");
+            }
+        }).fail(function (xhr, Status, error) {
+        });
+    })
+})
