@@ -14,7 +14,7 @@ class CategoryService {
     }
 
     public function getListCategories(){
-        return Category::all()->sortByDesc('quantity')->sortByDesc('status')->toArray();
+        return Category::all()->where('is_delete', 0)->sortByDesc('quantity')->sortByDesc('status')->toArray();
     }
 
     public function getListSubCategories(){
@@ -22,7 +22,7 @@ class CategoryService {
     }
 
     public function checkExistCate($cate_name){
-        $listCate = Category::all()->pluck('name')->toArray();
+        $listCate = Category::all()->where('is_delete', 0)->pluck('name')->toArray();
         foreach ($listCate as $cate){
             if(strtolower($cate) === strtolower($cate_name)){
                 return true;
@@ -55,19 +55,18 @@ class CategoryService {
 
     public function getCategory($id){
 
-        $category = Category::where('id', $id)->with('subcategories')->first()->toArray();
+        $category = Category::where('id', $id)->where('is_delete', 0)->with('subcategories')->first()->toArray();
 
         return $category;
     }
 
     public function removeCate($id){
-        return Category::where('id', $id)->update(['status' => 0]);
+        return Category::where('id', $id)->update(['is_delete' => 1]);
     }
 
-    public function activeCate($id){
-        return Category::where('id', $id)->update(['status' => 1]);
+    public function activeCate($id, $status){
+        return Category::where('id', $id)->update(['status' => $status ? 0 : 1]);
     }
-
 
 }
 

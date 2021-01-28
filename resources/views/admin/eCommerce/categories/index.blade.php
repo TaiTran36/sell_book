@@ -29,20 +29,12 @@
                         <td class="data-item text-center">{{$cate['description']}}</td>
                         <td class="data-item text-center">{{$cate['quantity']}}</td>
                         <td class="data-item text-center">
-                            @if($cate['status'] == 1)
-                                <button type="button" class="btn btn-success btn-sm btn-status">Active</button>
-                            @else
-                                <button type="button" class="btn btn-danger btn-sm btn-status" onclick="activate({{$cate['id']}})">Deactivate</button>
-                            @endif
+                            <button type="button" class="btn {{$cate['status'] ? 'btn-success' : 'btn-danger'}} btn-sm btn-status" data-id="{{$cate['id']}}" data-status="{{$cate['status'] ? 1 : 0}}">{{$cate['status'] ? 'Active' : 'Deactivate'}}</button>
                         </td>
                         <td class="data-item text-center"></td>
                         <td class="data-item text-center">
                             <button type="button" class="btn btn-outline-subCate" id="edit_category" onclick="displayPopup( this.id, is_edit = 1, {{$cate['id']}} )">Edit</button>
-                            @if($cate['status'] == 1)
-                                <button type="button" class="btn btn-outline-danger btn-delete-cate" data-content="{{$cate['id']}}">Delete</button>
-                            @else
-                                <button type="button" class="btn btn-outline-success">Active</button>
-                            @endif
+                            <button type="button" class="btn btn-outline-danger btn-delete-cate" data-content="{{$cate['id']}}">Delete</button>
                         </td>
                     </tr>
                 @endforeach
