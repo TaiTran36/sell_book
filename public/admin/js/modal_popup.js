@@ -1,6 +1,8 @@
 function displayPopup(id, is_edit, cate_id = null ) {
+    id = id.split('_');
     $('.errors').text('');
-    let title_modal = 'Add New Category';
+
+    let title_modal = 'Add New ' + capitalizeFirstLetter(id[1]);
 
     var modal = document.getElementById('modal_' + id[1]);
 
@@ -60,13 +62,11 @@ function fill_data_cate(data) {
     if(data['subcategories'].length > 0){
 
         for (let i = 0; i < data['subcategories'].length; i++){
-            alert(data['subcategories'].length);
             $('.add_sub').append('<div class="item-drag item-sub" data-content="'+ data['subcategories'][i].id +'">'+ data['subcategories'][i].name +'</div>');
             disableDragElement(data['subcategories'][i].id);
         }
 
     }
-    console.log(data['subcategories'].length);
 }
 
 function disableDragElement(id) {

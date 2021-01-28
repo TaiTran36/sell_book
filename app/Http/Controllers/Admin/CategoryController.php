@@ -107,6 +107,12 @@ class CategoryController extends Controller
 
     }
 
+    public function updateCategory(Request $request) {
+        $result = $this->categoryService->addCateForName($request->name_cate, $request->description, $request->list_sub);
+        $message = ['success' => 'Successfully', 'name' => $request->sub_cate];
+        return response()->json($message);
+    }
+
     /**
      * Remove the specified resource from storage.
      *

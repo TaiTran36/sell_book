@@ -35,11 +35,9 @@ class CategoryService {
     public function addCateForName($name_cate, $description,  $listId){
         DB::beginTransaction();
         try{
-            $result = Category::create(['name' => $name_cate, 'description' => $description]);
-            $convertToInt = $this->convertArrayTypeToInt(json_decode($listId, true));
-            $addSubs = $result->subcategories()->attach(json_decode($listId, true));
+            $result = Category::updateOrCreate(['name' => $name_cate, 'description' => $description]);
+            $addSubs = $result->subcategories()->sync (json_decode($listId, true));
             DB::commit();
-
         }catch(Exception $e){
             DB::rollBack();
             throw new Exception($e->getMessage());
@@ -54,7 +52,6 @@ class CategoryService {
     }
 
     public function getCategory($id){
-
         $category = Category::where('id', $id)->where('is_delete', 0)->with('subcategories')->first()->toArray();
 
         return $category;

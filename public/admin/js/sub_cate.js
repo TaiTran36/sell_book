@@ -1,7 +1,8 @@
 $('.add_sub_cate').click(function (e) {
     e.preventDefault();
     $('errors').text('');
-    let name_sub_cate = $('#name_sub').val();
+    let name_sub_cate = $('.name_subcategory').val();
+    let description = $('.sub_cate_description').val();
     $('.error-add-sub').text('');
     $.ajaxSetup({
         headers: {
@@ -14,7 +15,7 @@ $('.add_sub_cate').click(function (e) {
         data: {
             sub_cate: name_sub_cate,
             description: description,
-            is_form_subcate: $('.is_form_subcate').val();
+            is_form_subcate: $('.is_form_subcate').val()
         },
 
     }).done(function (data) {
