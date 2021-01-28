@@ -1,7 +1,6 @@
 function displayPopup(id, is_edit, cate_id = null ) {
-    id = id.split('_');
-
-    let title_modal = 'Add New ' + capitalizeFirstLetter(id[1]);
+    $('.errors').text('');
+    let title_modal = 'Add New Category';
 
     var modal = document.getElementById('modal_' + id[1]);
 

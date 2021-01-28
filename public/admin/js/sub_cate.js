@@ -1,9 +1,7 @@
 $('.add_sub_cate').click(function (e) {
     e.preventDefault();
-    let name_sub_cate = $('.name_subcategory').val();
-
-    let description = $('#modal_subcategory .sub_cate_description').val();
-
+    $('errors').text('');
+    let name_sub_cate = $('#name_sub').val();
     $('.error-add-sub').text('');
     $.ajaxSetup({
         headers: {
